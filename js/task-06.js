@@ -5,10 +5,13 @@ input.addEventListener('blur', e => {
     const valueLength = e.target.value.length;
 
     if(valueLength === +length) {
-        input.classList.add('valid');
-        input.classList.remove('invalid');
+        switcher('valid', 'invalid');
     } else {
-        input.classList.add('invalid');
-        input.classList.remove('valid');
+        switcher('invalid', 'valid');
     }
 });
+
+function switcher(add, remove) {
+    input.classList.add(add);
+    input.classList.remove(remove);
+}

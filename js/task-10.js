@@ -6,13 +6,15 @@ const boxesContainer = document.querySelector('#boxes');
 createBtn.addEventListener('click', createBoxes);
 destroyBtn.addEventListener('click', destroyBoxes);
 
+let size = 30;
+
 function createBoxes() {
   const amount = Number(input.value);
   let boxes = '';
 
-  for (let i = 0, size = 30; i < amount; i += 1, size += 10) {
+  for (let i = 0; i < amount; i += 1, size += 10) {
     const color = getRandomHexColor();
-    const box = `<div style="background-color:${color};width:${size}px,height:${size}px"></div>`;
+    const box = `<div style="background-color:${color};width:${size}px;height:${size}px"></div>`;
     boxes += box;
   }
 
@@ -24,7 +26,5 @@ function destroyBoxes() {
 }
 
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
+  return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
 }
