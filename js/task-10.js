@@ -22,6 +22,7 @@ function createBoxes() {
 }
 
 function destroyBoxes() {
+  size = 30;
   boxesContainer.innerHTML = '';
 }
 
